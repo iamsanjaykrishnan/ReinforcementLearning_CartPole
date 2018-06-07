@@ -24,7 +24,7 @@ for T in range(20):
     observations_episode = []
     rewards_epidosde = []
     for t in range(1000):
-        env.render()
+        #env.render()
         action = env.action_space.sample()
         observation_new, reward, done, info = env.step(action)
         observations_episode.append(observation_old)
@@ -46,4 +46,10 @@ for T in range(20):
             break
     Observation_trial.append(observations_episode)
     Reward_trial.append(rewards_epidosde)
+
+for T in range(len(Observation_trial)):
+    time_steps, _ = Observation_trial[T].shape
+    for t in range(time_steps):
+        pass
+
 env.close()
