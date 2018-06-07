@@ -25,18 +25,21 @@ NN = NeuralNetwork()
 # The rewards and observation of each episode is stored as list to be used as replay in DQN
 Reward_trial = []
 Observation_trial = []
+Action_trial = []
 
 for T in range(20): # Take Random Actions for n trials
     logger.info('Random trials')
     observation_old = env.reset()
     observations_episode = []
     rewards_epidosde = []
+    action_epidosde = []
     for t in range(1000):
         #env.render()
         action = env.action_space.sample()
         observation_new, reward, done, info = env.step(action)
         observations_episode.append(observation_old)
         rewards_epidosde.append(reward)
+        action_epidosde.append(action)
         observation_old = observation_new
         if done:
             print("Trial {} : Episode finished after {} timesteps".format(T+1,t + 1))
@@ -46,13 +49,17 @@ for T in range(20): # Take Random Actions for n trials
             rewards_epidosde = np.asarray(rewards_epidosde)
             observations_episode = np.asarray(observations_episode)
             rewards_epidosde = rewards_epidosde.reshape(-1,1)
-            logger.info("rewards_epidosde.shape"+str(rewards_epidosde.shape))
+            action_epidosde = np.asarray(action_epidosde)
+            action_epidosde = action_epidosde.reshape(-1, 1)
+            logger.info("rewards_epidosde.shape {}" .format(rewards_epidosde.shape))
+            logger.info("action_epidosde.shape {}" .format(action_epidosde.shape))
 
             # Calculate cumsum for reward in desending order
             rewards_epidosde = np.flipud(rewards_epidosde)
             rewards_epidosde = np.cumsum(rewards_epidosde)
             rewards_epidosde = np.flipud(rewards_epidosde)
-            logger.info("rewards_epidosde"+str(rewards_epidosde))
+            logger.info("rewards_epidosde {}".format(rewards_epidosde))
+            logger.info("action_epidosde {}".format(action_epidosde))
             break
 
     # append observation and reward of episode to list for later use
@@ -62,7 +69,5 @@ for T in range(20): # Take Random Actions for n trials
 # Teach neural network to play
 for Trial in range(len(Observation_trial)): # iterate for all previous trials
     time_steps, _ = Observation_trial[Trial].shape
-    for t in range(time_steps): # iterate for all previous time steps
-        pass
-
+    NN.trainDiscriminator(Observation_trial[Trial],Action_trial[Trial],Reward_trial[Trial] )
 env.close()

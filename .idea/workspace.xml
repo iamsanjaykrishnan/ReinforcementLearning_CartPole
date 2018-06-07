@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1ca7d418-7177-4ee3-88cc-b8e70d881139" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/CartPole_trial.py" afterPath="$PROJECT_DIR$/CartPole_trial.py" />
-      <change beforePath="$PROJECT_DIR$/Cartpole.log" afterPath="$PROJECT_DIR$/Cartpole.log" />
-      <change beforePath="$PROJECT_DIR$/temp.py" afterPath="$PROJECT_DIR$/temp.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +16,8 @@
       <file leaf-file-name="CartPole_trial.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CartPole_trial.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="50" column="42" lean-forward="false" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+            <state relative-caret-position="120">
+              <caret line="56" column="47" lean-forward="false" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -45,8 +43,8 @@
         <option value="$PROJECT_DIR$/CartPoleGAN.py" />
         <option value="$PROJECT_DIR$/CartPole_NN.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/CartPole_trial.py" />
         <option value="$PROJECT_DIR$/temp.py" />
+        <option value="$PROJECT_DIR$/CartPole_trial.py" />
       </list>
     </option>
   </component>
@@ -326,8 +324,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CartPole_trial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="50" column="42" lean-forward="false" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+        <state relative-caret-position="120">
+          <caret line="56" column="47" lean-forward="false" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
