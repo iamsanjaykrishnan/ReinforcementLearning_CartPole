@@ -1,5 +1,19 @@
 import tensorflow as tf
 import numpy as np
+import logging
+import os
+
+# clear old log files
+os.remove("./CartpoleNN.log")
+
+# initiate logger
+logger = logging.getLogger('CartpoleNN')
+hdlr = logging.FileHandler('./CartpoleNN.log')
+formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+hdlr.setFormatter(formatter)
+logger.addHandler(hdlr)
+logger.setLevel(logging.DEBUG)
+
 class NeuralNetwork:
     def __init__(self): # constructor
         self.neural_network_init()
@@ -64,12 +78,21 @@ class NeuralNetwork:
         # Actor optimisation by maximizing predicted reward
         self.Actor_op = tf.train.AdamOptimizer().minimize(-Act_reward_pred, var_list=G_var)
 
-    def Input_One_hot_encoded(self, state=np.zeros([4,1])):
+    def Input_One_hot_encoded(self, state, axis = 2):
         # Create one hot encoded bins for State
         def Binning(x):
             no_bins = 10
             bin_boundry = np.linspace(-1,1,no_bins)
             out_,_ = np.histogram(x, bin_boundry)
             return out_
-        return np.apply_along_axis(Binning, 1, state)
+        return np.apply_along_axis(Binning, axis, state)
 
+    def trainDiscriminator(self,Observation_trial,Action_trial,Reward_trial,iteration =100):
+        Observation_trial = np.asarray(Observation_trial)
+        #Observation_trial =[trials,timesteps,state] axis 2 to be encoded
+        Observation_trial = self.Input_One_hot_encoded(Observation_trial,2)
+        Action_trial = np.asarray(Action_trial)
+        Reward_trial = np.asarray(Reward_trial)
+        for _ in range(iteration):
+            pass
+        pass
