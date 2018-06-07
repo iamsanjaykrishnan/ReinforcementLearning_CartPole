@@ -1,0 +1,86 @@
+2018-06-07 10:38:09,636 INFO Random trials
+2018-06-07 10:38:10,057 INFO Trial 1 : Episode finished after 13 timesteps
+2018-06-07 10:38:10,057 INFO rewards_epidosde.shape(13, 1)
+2018-06-07 10:38:10,057 INFO rewards_epidosde[13. 12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:10,057 INFO Random trials
+2018-06-07 10:38:10,309 INFO Trial 2 : Episode finished after 15 timesteps
+2018-06-07 10:38:10,309 INFO rewards_epidosde.shape(15, 1)
+2018-06-07 10:38:10,309 INFO rewards_epidosde[15. 14. 13. 12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:10,309 INFO Random trials
+2018-06-07 10:38:10,637 INFO Trial 3 : Episode finished after 20 timesteps
+2018-06-07 10:38:10,637 INFO rewards_epidosde.shape(20, 1)
+2018-06-07 10:38:10,637 INFO rewards_epidosde[20. 19. 18. 17. 16. 15. 14. 13. 12. 11. 10.  9.  8.  7.  6.  5.  4.  3.
+  2.  1.]
+2018-06-07 10:38:10,637 INFO Random trials
+2018-06-07 10:38:11,422 INFO Trial 4 : Episode finished after 47 timesteps
+2018-06-07 10:38:11,422 INFO rewards_epidosde.shape(47, 1)
+2018-06-07 10:38:11,422 INFO rewards_epidosde[47. 46. 45. 44. 43. 42. 41. 40. 39. 38. 37. 36. 35. 34. 33. 32. 31. 30.
+ 29. 28. 27. 26. 25. 24. 23. 22. 21. 20. 19. 18. 17. 16. 15. 14. 13. 12.
+ 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:11,422 INFO Random trials
+2018-06-07 10:38:11,683 INFO Trial 5 : Episode finished after 16 timesteps
+2018-06-07 10:38:11,683 INFO rewards_epidosde.shape(16, 1)
+2018-06-07 10:38:11,683 INFO rewards_epidosde[16. 15. 14. 13. 12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:11,683 INFO Random trials
+2018-06-07 10:38:11,886 INFO Trial 6 : Episode finished after 12 timesteps
+2018-06-07 10:38:11,886 INFO rewards_epidosde.shape(12, 1)
+2018-06-07 10:38:11,886 INFO rewards_epidosde[12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:11,886 INFO Random trials
+2018-06-07 10:38:12,105 INFO Trial 7 : Episode finished after 13 timesteps
+2018-06-07 10:38:12,105 INFO rewards_epidosde.shape(13, 1)
+2018-06-07 10:38:12,105 INFO rewards_epidosde[13. 12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:12,105 INFO Random trials
+2018-06-07 10:38:12,282 INFO Trial 8 : Episode finished after 11 timesteps
+2018-06-07 10:38:12,282 INFO rewards_epidosde.shape(11, 1)
+2018-06-07 10:38:12,282 INFO rewards_epidosde[11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:12,282 INFO Random trials
+2018-06-07 10:38:12,610 INFO Trial 9 : Episode finished after 19 timesteps
+2018-06-07 10:38:12,610 INFO rewards_epidosde.shape(19, 1)
+2018-06-07 10:38:12,610 INFO rewards_epidosde[19. 18. 17. 16. 15. 14. 13. 12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.
+  1.]
+2018-06-07 10:38:12,610 INFO Random trials
+2018-06-07 10:38:12,891 INFO Trial 10 : Episode finished after 17 timesteps
+2018-06-07 10:38:12,891 INFO rewards_epidosde.shape(17, 1)
+2018-06-07 10:38:12,891 INFO rewards_epidosde[17. 16. 15. 14. 13. 12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:12,891 INFO Random trials
+2018-06-07 10:38:13,090 INFO Trial 11 : Episode finished after 12 timesteps
+2018-06-07 10:38:13,090 INFO rewards_epidosde.shape(12, 1)
+2018-06-07 10:38:13,090 INFO rewards_epidosde[12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:13,090 INFO Random trials
+2018-06-07 10:38:13,330 INFO Trial 12 : Episode finished after 15 timesteps
+2018-06-07 10:38:13,330 INFO rewards_epidosde.shape(15, 1)
+2018-06-07 10:38:13,330 INFO rewards_epidosde[15. 14. 13. 12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:13,330 INFO Random trials
+2018-06-07 10:38:13,616 INFO Trial 13 : Episode finished after 17 timesteps
+2018-06-07 10:38:13,616 INFO rewards_epidosde.shape(17, 1)
+2018-06-07 10:38:13,616 INFO rewards_epidosde[17. 16. 15. 14. 13. 12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:13,616 INFO Random trials
+2018-06-07 10:38:13,976 INFO Trial 14 : Episode finished after 21 timesteps
+2018-06-07 10:38:13,976 INFO rewards_epidosde.shape(21, 1)
+2018-06-07 10:38:13,976 INFO rewards_epidosde[21. 20. 19. 18. 17. 16. 15. 14. 13. 12. 11. 10.  9.  8.  7.  6.  5.  4.
+  3.  2.  1.]
+2018-06-07 10:38:13,976 INFO Random trials
+2018-06-07 10:38:14,251 INFO Trial 15 : Episode finished after 17 timesteps
+2018-06-07 10:38:14,251 INFO rewards_epidosde.shape(17, 1)
+2018-06-07 10:38:14,251 INFO rewards_epidosde[17. 16. 15. 14. 13. 12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:14,251 INFO Random trials
+2018-06-07 10:38:14,485 INFO Trial 16 : Episode finished after 14 timesteps
+2018-06-07 10:38:14,485 INFO rewards_epidosde.shape(14, 1)
+2018-06-07 10:38:14,485 INFO rewards_epidosde[14. 13. 12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:14,485 INFO Random trials
+2018-06-07 10:38:14,876 INFO Trial 17 : Episode finished after 23 timesteps
+2018-06-07 10:38:14,876 INFO rewards_epidosde.shape(23, 1)
+2018-06-07 10:38:14,876 INFO rewards_epidosde[23. 22. 21. 20. 19. 18. 17. 16. 15. 14. 13. 12. 11. 10.  9.  8.  7.  6.
+  5.  4.  3.  2.  1.]
+2018-06-07 10:38:14,876 INFO Random trials
+2018-06-07 10:38:15,119 INFO Trial 18 : Episode finished after 15 timesteps
+2018-06-07 10:38:15,119 INFO rewards_epidosde.shape(15, 1)
+2018-06-07 10:38:15,119 INFO rewards_epidosde[15. 14. 13. 12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:15,119 INFO Random trials
+2018-06-07 10:38:15,314 INFO Trial 19 : Episode finished after 12 timesteps
+2018-06-07 10:38:15,314 INFO rewards_epidosde.shape(12, 1)
+2018-06-07 10:38:15,314 INFO rewards_epidosde[12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
+2018-06-07 10:38:15,314 INFO Random trials
+2018-06-07 10:38:15,533 INFO Trial 20 : Episode finished after 13 timesteps
+2018-06-07 10:38:15,533 INFO rewards_epidosde.shape(13, 1)
+2018-06-07 10:38:15,533 INFO rewards_epidosde[13. 12. 11. 10.  9.  8.  7.  6.  5.  4.  3.  2.  1.]
