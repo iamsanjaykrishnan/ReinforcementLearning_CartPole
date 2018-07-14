@@ -21,6 +21,7 @@ class NeuralNetwork:
         init_vs = tf.initializers.variance_scaling(scale=0.05)
         with tf.variable_scope('Actor')as scope:
             hidden = tf.layers.dense(input_tensor, 20, activation=tf.nn.relu,kernel_initializer=init_vs)
+            hidden = tf.contrib.layers.layer_norm(hidden)
             hidden = tf.layers.dropout(hidden,0.9)
             hidden = tf.layers.dense(hidden, 10, activation=tf.nn.relu,kernel_initializer=init_vs)
             hidden = tf.layers.dropout(hidden, 0.9)
@@ -35,6 +36,7 @@ class NeuralNetwork:
             if reuse:
                 scope.reuse_variables()
             hidden = tf.layers.dense(input_tensor,20,activation=tf.nn.relu,kernel_initializer=init_vs)
+            hidden = tf.contrib.layers.layer_norm(hidden)
             hidden = tf.layers.dropout(hidden,0.9)
             hidden = tf.layers.dense(hidden, 10, activation=tf.nn.relu,kernel_initializer=init_vs)
             hidden = tf.layers.dropout(hidden, 0.9)
