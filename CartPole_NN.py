@@ -108,8 +108,8 @@ class NeuralNetwork:
         appended_values = pd.DataFrame(value, columns=column_names)
         self.df = self.df.append(appended_values,ignore_index=True)
 
-    def save_df(self):
-        csv_file = self.nnDirectory+'\\pdFrame.csv'
+    def save_df(self,csv_file):
+        #csv_file = self.nnDirectory+'\\pdFrame.csv'
         self.df.to_csv(csv_file)
 
     def load_dataframe(self,file):
@@ -195,5 +195,14 @@ class NeuralNetwork:
             _, lossS = self.sess.run([self.TrainCritic_op, self.CriticLossSummary], feed_dict=feed_dict)
             self.i+=1
             self.train_writer.add_summary(lossS, self.i)
+
+    def SaveNeuralNetwork(self):
+        saver = tf.train.Saver()
+        # Save the variables in session  to disk.
+        saver.save(self.sess, self.nnDirectory+'\\model\CartpoleNN')
+    def LoadNeuralNetwork(self,Location):
+        # load meta graph and restore weights
+        saver = tf.train.import_meta_graph(self.nnDirectory+'\\model\CartpoleNN.meta')
+        saver.restore(self.sess, tf.train.latest_checkpoint(self.nnDirectory+'\\model'))
 
 

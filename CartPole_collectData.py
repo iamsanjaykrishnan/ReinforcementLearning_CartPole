@@ -9,7 +9,7 @@ NN = NeuralNetwork()
 
 for E in range(100): # Take Random Actions for n trials and collect data
     observation_old = env.reset()
-    for s in range(1000):
+    for s in range(200):
         #env.render()
         action = env.action_space.sample()
         observation_new, reward, done, info = env.step(action)
@@ -23,6 +23,6 @@ for E in range(100): # Take Random Actions for n trials and collect data
             print("Trial {} : Episode finished after {} timesteps".format(E+1,s + 1))
             break
 
-NN.save_df() # Save data frame as csv
+NN.save_df(NN.nnDirectory+'\\pdFrame.csv') # Save data frame as csv
 
 env.close()

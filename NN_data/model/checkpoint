@@ -1,0 +1,2 @@
+model_checkpoint_path: "E:\\ReinforcementLearning_CartPole\\NN_data\\model\\CartpoleNN"
+all_model_checkpoint_paths: "E:\\ReinforcementLearning_CartPole\\NN_data\\model\\CartpoleNN"

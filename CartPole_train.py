@@ -1,11 +1,13 @@
 from CartPole_NN import NeuralNetwork
 import gym
 import numpy as np
+
+
 # initialize AI gym for cartpole
 env = gym.make('CartPole-v0')
 env.reset()
 # preCollected data
-data = 'E:\ReinforcementLearning_CartPole\\NN_data\pdFrame.csv'
+data = 'E:\ReinforcementLearning_CartPole\\NN_data\\120Episodes.csv'
 # initialize custom neural network class
 NN = NeuralNetwork()
 # load old data
@@ -17,7 +19,8 @@ NN.Actor_train(1000)
 
 for E in range(20):
     observation_old = env.reset()
-    for s in range(1000):
+    for s in range(200):
+        env.render()
         observation_old = np.reshape(observation_old,[1,-1])
         action_one_hot = NN.Action(observation_old)
         if action_one_hot[0][0]>action_one_hot[0][1]:
@@ -37,3 +40,6 @@ for E in range(20):
             NN.Critic_train(1000)
             NN.Actor_train(1000)
             break
+
+#NN.save_df(NN.nnDirectory+'\\120Episodes.csv')
+NN.SaveNeuralNetwork()
