@@ -49,9 +49,9 @@ class NeuralNetwork:
         tf.reset_default_graph()
 
         # define input place holder
-        self.State_tensor = tf.placeholder(tf.float32, shape=[None, 4]) # step , state
-        self.Action_tensor = tf.placeholder(tf.float32, shape=[None, 2]) # step , binary encoded action
-        self.Reward_tensor = tf.placeholder(tf.float32, shape=[None, 1])  # step , binary encoded action
+        self.State_tensor = tf.placeholder(tf.float32, shape=[None, 4],name='State_tensor' ) # step , state
+        self.Action_tensor = tf.placeholder(tf.float32, shape=[None, 2],name='Action_tensor' ) # step , binary encoded action
+        self.Reward_tensor = tf.placeholder(tf.float32, shape=[None, 1],name='Reward_tensor' )  # step , binary encoded action
 
         # define Actor
         self.nnActionTensor = self.Actor(self.State_tensor)

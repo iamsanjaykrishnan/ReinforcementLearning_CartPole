@@ -7,7 +7,7 @@ import numpy as np
 env = gym.make('CartPole-v0')
 env.reset()
 # preCollected data
-data = 'E:\ReinforcementLearning_CartPole\\NN_data\\120Episodes.csv'
+data = 'E:\ReinforcementLearning_CartPole\\NN_data\\pdFrame.csv'
 # initialize custom neural network class
 NN = NeuralNetwork()
 # load old data
