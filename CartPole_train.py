@@ -28,7 +28,7 @@ for E in range(20):
         if done:
             reward = 0
         else:
-            reward = 10
+            reward = 1
         NN.DataFrame_append(Episode_no=E,Step_no=s,OldState=observation_old,NewState=observation_new,Action=action,Reward=reward)
 
         observation_old = observation_new

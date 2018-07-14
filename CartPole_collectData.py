@@ -7,7 +7,7 @@ env.reset()
 # initialize custom neural network class
 NN = NeuralNetwork()
 
-for E in range(20): # Take Random Actions for n trials and collect data
+for E in range(100): # Take Random Actions for n trials and collect data
     observation_old = env.reset()
     for s in range(1000):
         #env.render()
@@ -16,7 +16,7 @@ for E in range(20): # Take Random Actions for n trials and collect data
         if done:
             reward = 0
         else:
-            reward = 10
+            reward = 1
         NN.DataFrame_append(Episode_no=E+1,Step_no=s,OldState=observation_old,NewState=observation_new,Action=action,Reward=reward)
         observation_old = observation_new
         if done:

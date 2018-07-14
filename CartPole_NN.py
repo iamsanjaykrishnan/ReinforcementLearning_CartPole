@@ -20,7 +20,7 @@ class NeuralNetwork:
     def Actor(self,input_tensor):
         init_vs = tf.initializers.variance_scaling(scale=0.05)
         with tf.variable_scope('Actor')as scope:
-            hidden = tf.layers.dense(input_tensor, 10, activation=tf.nn.relu,kernel_initializer=init_vs)
+            hidden = tf.layers.dense(input_tensor, 20, activation=tf.nn.relu,kernel_initializer=init_vs)
             hidden = tf.layers.dropout(hidden,0.9)
             hidden = tf.layers.dense(hidden, 10, activation=tf.nn.relu,kernel_initializer=init_vs)
             hidden = tf.layers.dropout(hidden, 0.9)
@@ -34,7 +34,7 @@ class NeuralNetwork:
         with tf.variable_scope('Critic')as scope:
             if reuse:
                 scope.reuse_variables()
-            hidden = tf.layers.dense(input_tensor,10,activation=tf.nn.relu,kernel_initializer=init_vs)
+            hidden = tf.layers.dense(input_tensor,20,activation=tf.nn.relu,kernel_initializer=init_vs)
             hidden = tf.layers.dropout(hidden,0.9)
             hidden = tf.layers.dense(hidden, 10, activation=tf.nn.relu,kernel_initializer=init_vs)
             hidden = tf.layers.dropout(hidden, 0.9)
@@ -178,9 +178,18 @@ class NeuralNetwork:
         Action = self.df.as_matrix(['Action0', 'Action1'])
         Reward = self.df.as_matrix(['Reward'])
         NextAction = self.Action(NewState)
-        QValue =Reward+Reward*0.1*self.Critic_value(NewState,NextAction) # actual + prediction
+        NextAction11 = np.ones(np.shape(NextAction))
+        NextAction10 = np.copy(NextAction11)
+        NextAction10[:,1] = 0
+        NextAction01 = np.copy(NextAction11)
+        NextAction01[:, 0] = 0
+        PredValue10 = self.Critic_value(NewState,NextAction10)
+        PredValue01 = self.Critic_value(NewState, NextAction01)
+        PredValues = np.maximum(PredValue10,PredValue01)
+
+        QValue =Reward+np.multiply(Reward,PredValues) # actual + prediction
         for i in range(iterations):
-            feed_dict = {self.State_tensor: OldState, self.Action_tensor: Action,self.Reward_tensor:Reward  }
+            feed_dict = {self.State_tensor: OldState, self.Action_tensor: Action,self.Reward_tensor:QValue  }
             _, lossS = self.sess.run([self.TrainCritic_op, self.CriticLossSummary], feed_dict=feed_dict)
             self.i+=1
             self.train_writer.add_summary(lossS, self.i)
