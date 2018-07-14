@@ -1,8 +1,9 @@
 # ReinforcementLearning_CartPole
 
 ![ReinforcementLearning_Sanjay Krishnan Venugopal](https://github.com/iamsanjaykrishnan/ReinforcementLearning_CartPole/blob/master/SanjayReinforcementLearning.gif)<br />
-Training method : 100 episodes of random action were performed initially. The number of time steps survived is the reward with 200 being the maximum. Based on this data, the critic network was modelled to predict Q value. The actor network is trained to maximize the predicted Q value.<br />
-Maximum timesteps achieved by random action was approximately 40
+Training method : <br />100 episodes of random action were performed initially. The number of time steps survived is the reward with 200 being the maximum. Under random sampling a max score of approx 40 was achieved. Based on the random samples, the critic network was modelled to predict Q value. The actor network is trained to maximize the predicted Q value.<br />
+Q = reward_for_current_step + Max_reward_for_next_step<br /><br />
+From the results it is clear that the neural network models a method to maximize score.<br />
 The model runs A2C learning. <br />
 Result <br />
 Trial 1 : Episode finished after 53 timesteps<br />
