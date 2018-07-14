@@ -1,4 +1,7 @@
 # ReinforcementLearning_CartPole
+
+![ReinforcementLearning_Sanjay Krishnan Venugopal](https://github.com/iamsanjaykrishnan/ReinforcementLearning_CartPole/blob/master/SanjayReinforcementLearning.gif)
+
 The model runs A2C learning. 
 Result 
 Trial 1 : Episode finished after 53 timesteps
