@@ -15,7 +15,9 @@ for E in range(20): # Take Random Actions for n trials and collect data
         observation_new, reward, done, info = env.step(action)
         if done:
             reward = 0
-        NN.DataFrame_append(Episode_no=E+1,Step_no=s,State=observation_old,Action=action,Reward=reward)
+        else:
+            reward = 10
+        NN.DataFrame_append(Episode_no=E+1,Step_no=s,OldState=observation_old,NewState=observation_new,Action=action,Reward=reward)
         observation_old = observation_new
         if done:
             print("Trial {} : Episode finished after {} timesteps".format(E+1,s + 1))
