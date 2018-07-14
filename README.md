@@ -24,3 +24,6 @@ Trial 17 : Episode finished after 97 timesteps
 Trial 18 : Episode finished after 89 timesteps
 Trial 19 : Episode finished after 97 timesteps
 Trial 20 : Episode finished after 107 timesteps
+
+# ReinforcementLearning_CartPole_Architecture -> Actor Critic or GAN
+![ReinforcementLearning_A2C](https://github.com/iamsanjaykrishnan/ReinforcementLearning_CartPole/blob/master/Architecture.png)
