@@ -5,13 +5,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/CartPole_NN.py" afterPath="$PROJECT_DIR$/CartPole_NN.py" />
       <change beforePath="$PROJECT_DIR$/CartPole_train.py" afterPath="$PROJECT_DIR$/CartPole_train.py" />
+      <change beforePath="$PROJECT_DIR$/E__ReinforcementLearning_CartPole_CartPole_train.py 7_14_2018 5_27_49 PMTrim.mp4" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/NN_data/120Episodes.csv" afterPath="$PROJECT_DIR$/NN_data/120Episodes.csv" />
       <change beforePath="$PROJECT_DIR$/NN_data/CartpoleNN.log" afterPath="$PROJECT_DIR$/NN_data/CartpoleNN.log" />
-      <change beforePath="$PROJECT_DIR$/NN_data/TFsummary/16_26_23/events.out.tfevents.1531578383.SANJAY" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/NN_data/TFsummary/16_30_25/events.out.tfevents.1531578625.SANJAY" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/NN_data/TFsummary/17_13_11/events.out.tfevents.1531581191.SANJAY" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/NN_data/TFsummary/17_26_40/events.out.tfevents.1531582000.SANJAY" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/NN_data/TFsummary/17_34_24/events.out.tfevents.1531582464.SANJAY" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/NN_data/TFsummary/17_35_44/events.out.tfevents.1531582544.SANJAY" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/NN_data/E__ReinforcementLearning_CartPole_CartPole_train.py 7_14_2018 5_27_49 PM.mp4" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/NN_data/model/CartpoleNN.data-00000-of-00001" afterPath="$PROJECT_DIR$/NN_data/model/CartpoleNN.data-00000-of-00001" />
+      <change beforePath="$PROJECT_DIR$/NN_data/model/CartpoleNN.index" afterPath="$PROJECT_DIR$/NN_data/model/CartpoleNN.index" />
+      <change beforePath="$PROJECT_DIR$/NN_data/model/CartpoleNN.meta" afterPath="$PROJECT_DIR$/NN_data/model/CartpoleNN.meta" />
+      <change beforePath="$PROJECT_DIR$/NetworkArchitecture.png" afterPath="$PROJECT_DIR$/NetworkArchitecture.png" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,20 +27,8 @@
       <file leaf-file-name="CartPole_train.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CartPole_train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-439">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CartPole_collectData.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CartPole_collectData.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="272">
+              <caret line="16" column="21" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="16" selection-end-column="21" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -49,8 +39,8 @@
       <file leaf-file-name="CartPole_NN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CartPole_NN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="52" column="93" lean-forward="false" selection-start-line="52" selection-start-column="93" selection-end-line="52" selection-end-column="93" />
+            <state relative-caret-position="602">
+              <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -73,6 +63,7 @@
       <find>resha</find>
       <find>opt</find>
       <find>sa</find>
+      <find>place</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -85,8 +76,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/CartPole_trial.py" />
         <option value="$PROJECT_DIR$/temp.py" />
-        <option value="$PROJECT_DIR$/CartPole_collectData.py" />
         <option value="$PROJECT_DIR$/CartPole_NN.py" />
+        <option value="$PROJECT_DIR$/CartPole_collectData.py" />
         <option value="$PROJECT_DIR$/CartPole_train.py" />
       </list>
     </option>
@@ -243,9 +234,9 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.CartPole_train" />
-        <item index="1" class="java.lang.String" itemvalue="Python.CartPole_collectData" />
-        <item index="2" class="java.lang.String" itemvalue="Python.CartPole_train" />
-        <item index="3" class="java.lang.String" itemvalue="Python.CartPole_NN" />
+        <item index="1" class="java.lang.String" itemvalue="Python.CartPole_NN" />
+        <item index="2" class="java.lang.String" itemvalue="Python.CartPole_collectData" />
+        <item index="3" class="java.lang.String" itemvalue="Python.CartPole_train" />
         <item index="4" class="java.lang.String" itemvalue="Python.temp" />
       </list>
     </recent_temporary>
@@ -273,13 +264,13 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25297618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -311,10 +302,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CartPole_collectData.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CartPole_NN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="93" lean-forward="false" selection-start-line="52" selection-start-column="93" selection-end-line="52" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CartPole_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CartPole_collectData.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -334,7 +355,7 @@
         <state relative-caret-position="119">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -364,7 +385,7 @@
         <state relative-caret-position="119">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -394,7 +415,7 @@
         <state relative-caret-position="119">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -431,7 +452,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -557,30 +578,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CartPole_collectData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CartPole_NN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="52" column="93" lean-forward="false" selection-start-line="52" selection-start-column="93" selection-end-line="52" selection-end-column="93" />
+        <state relative-caret-position="602">
+          <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CartPole_collectData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CartPole_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-439">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="16" column="21" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="16" selection-end-column="21" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>

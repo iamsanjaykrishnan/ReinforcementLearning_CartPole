@@ -41,5 +41,5 @@ for E in range(20):
             NN.Actor_train(1000)
             break
 
-#NN.save_df(NN.nnDirectory+'\\120Episodes.csv')
+NN.save_df(NN.nnDirectory+'\\120Episodes.csv')
 NN.SaveNeuralNetwork()

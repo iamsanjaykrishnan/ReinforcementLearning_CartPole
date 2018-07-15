@@ -18,28 +18,29 @@ class NeuralNetwork:
 
 
     def Actor(self,input_tensor):
-        init_vs = tf.initializers.variance_scaling(scale=0.05)
+        init_vs = tf.initializers.variance_scaling(scale=0.01)
         with tf.variable_scope('Actor')as scope:
-            hidden = tf.layers.dense(input_tensor, 20, activation=tf.nn.relu,kernel_initializer=init_vs)
+            hidden = tf.layers.dense(input_tensor, 10, activation=tf.nn.elu,kernel_initializer=init_vs)
             hidden = tf.contrib.layers.layer_norm(hidden)
-            hidden = tf.layers.dropout(hidden,0.9)
-            hidden = tf.layers.dense(hidden, 10, activation=tf.nn.relu,kernel_initializer=init_vs)
-            hidden = tf.layers.dropout(hidden, 0.9)
-            out1 = tf.layers.dense(hidden, 1, activation=tf.nn.sigmoid,kernel_initializer=init_vs)
-            out2 = 1-out1
-            hidden = tf.concat([out1,out2],1)
+            hidden = tf.layers.dropout(hidden,self.Dropout)
+            hidden = tf.layers.dense(hidden, 10, activation=tf.nn.elu,kernel_initializer=init_vs)
+            hidden = tf.contrib.layers.layer_norm(hidden)
+            hidden = tf.layers.dropout(hidden, self.Dropout)
+            hidden = tf.layers.dense(hidden, 2, activation=tf.nn.elu,kernel_initializer=init_vs)
+            hidden = tf.nn.softmax(hidden)
             output = hidden
         return output
     def Critic(self,input_tensor,reuse=0):
-        init_vs = tf.initializers.variance_scaling(scale=0.05)
+        init_vs = tf.initializers.variance_scaling(scale=0.01)
         with tf.variable_scope('Critic')as scope:
             if reuse:
                 scope.reuse_variables()
-            hidden = tf.layers.dense(input_tensor,20,activation=tf.nn.relu,kernel_initializer=init_vs)
+            hidden = tf.layers.dense(input_tensor,10,activation=tf.nn.elu,kernel_initializer=init_vs)
             hidden = tf.contrib.layers.layer_norm(hidden)
-            hidden = tf.layers.dropout(hidden,0.9)
-            hidden = tf.layers.dense(hidden, 10, activation=tf.nn.relu,kernel_initializer=init_vs)
-            hidden = tf.layers.dropout(hidden, 0.9)
+            hidden = tf.layers.dropout(hidden,self.Dropout)
+            hidden = tf.layers.dense(hidden, 10, activation=tf.nn.elu,kernel_initializer=init_vs)
+            hidden = tf.contrib.layers.layer_norm(hidden)
+            hidden = tf.layers.dropout(hidden, self.Dropout)
             hidden = tf.layers.dense(hidden, 1, activation=None,kernel_initializer=init_vs)
             output = hidden
         return output
@@ -52,7 +53,7 @@ class NeuralNetwork:
         self.State_tensor = tf.placeholder(tf.float32, shape=[None, 4],name='State_tensor' ) # step , state
         self.Action_tensor = tf.placeholder(tf.float32, shape=[None, 2],name='Action_tensor' ) # step , binary encoded action
         self.Reward_tensor = tf.placeholder(tf.float32, shape=[None, 1],name='Reward_tensor' )  # step , binary encoded action
-
+        self.Dropout = tf.placeholder(tf.float32,name='Dropout') # Dropout
         # define Actor
         self.nnActionTensor = self.Actor(self.State_tensor)
         print()
@@ -148,16 +149,18 @@ class NeuralNetwork:
         Action = self.df.as_matrix(['Action0', 'Action1'])
         Reward = self.df.as_matrix(['Reward'])
         for i in range(iterations):
-            feed_dict = {self.State_tensor: OldState, self.Action_tensor: Action,self.Reward_tensor:Reward  }
+            feed_dict = {self.State_tensor: OldState, self.Action_tensor: Action,self.Reward_tensor:Reward, self.Dropout: 0.9 }
             _, lossS = self.sess.run([self.TrainCritic_op, self.CriticLossSummary], feed_dict=feed_dict)
             self.i += 1
             self.train_writer.add_summary(lossS, self.i)
 
     def Actor_train(self,iterations):
-        OldState = self.df.as_matrix(['Old_State0', 'Old_State1', 'Old_State2', 'Old_State3'])
 
         for i in range(iterations):
-            feed_dict = {self.State_tensor: OldState}
+            dfSample = self.df.sample(25)  # minibatch 25
+            OldState = dfSample.as_matrix(['Old_State0', 'Old_State1', 'Old_State2', 'Old_State3'])
+
+            feed_dict = {self.State_tensor: OldState, self.Dropout: 0.9}
             _, lossS = self.sess.run([self.TrainActor_op, self.ActorLossSummary], feed_dict=feed_dict)
             self.j+=1
             self.train_writer.add_summary(lossS,self.j )
@@ -165,33 +168,36 @@ class NeuralNetwork:
     def Critic_value(self,state,action):
         OldState = state
         Action = action
-        feed_dict = {self.State_tensor: OldState, self.Action_tensor: Action}
+        feed_dict = {self.State_tensor: OldState, self.Action_tensor: Action, self.Dropout: 1}
         Score = self.sess.run([self.CriticScore_event], feed_dict=feed_dict)
         return Score[0]
 
     def Action(self,State):
-        feed_dict = {self.State_tensor: State}
+        feed_dict = {self.State_tensor: State, self.Dropout: 1}
         Action_one_hot_encoded= self.sess.run([self.nnActionTensor], feed_dict=feed_dict)
         return Action_one_hot_encoded[0]
 
     def Critic_train(self,iterations):
-        OldState = self.df.as_matrix(['Old_State0', 'Old_State1', 'Old_State2', 'Old_State3'])
-        NewState = self.df.as_matrix(['New_State0', 'New_State1', 'New_State2', 'New_State3'])
-        Action = self.df.as_matrix(['Action0', 'Action1'])
-        Reward = self.df.as_matrix(['Reward'])
-        NextAction = self.Action(NewState)
-        NextAction11 = np.ones(np.shape(NextAction))
-        NextAction10 = np.copy(NextAction11)
-        NextAction10[:,1] = 0
-        NextAction01 = np.copy(NextAction11)
-        NextAction01[:, 0] = 0
-        PredValue10 = self.Critic_value(NewState,NextAction10)
-        PredValue01 = self.Critic_value(NewState, NextAction01)
-        PredValues = np.maximum(PredValue10,PredValue01)
 
-        QValue =Reward+np.multiply(Reward,PredValues) # actual + prediction
         for i in range(iterations):
-            feed_dict = {self.State_tensor: OldState, self.Action_tensor: Action,self.Reward_tensor:QValue  }
+            dfSample = self.df.sample(25) # minibatch 25
+            OldState = dfSample.as_matrix(['Old_State0', 'Old_State1', 'Old_State2', 'Old_State3'])
+            NewState = dfSample.as_matrix(['New_State0', 'New_State1', 'New_State2', 'New_State3'])
+            Action = dfSample.as_matrix(['Action0', 'Action1'])
+            Reward = dfSample.as_matrix(['Reward'])
+            NextAction = self.Action(NewState)
+            NextAction11 = np.ones(np.shape(NextAction))
+            NextAction10 = np.copy(NextAction11)
+            NextAction10[:, 1] = 0
+            NextAction01 = np.copy(NextAction11)
+            NextAction01[:, 0] = 0
+            PredValue10 = self.Critic_value(NewState, NextAction10)
+            PredValue01 = self.Critic_value(NewState, NextAction01)
+            PredValues = np.maximum(PredValue10, PredValue01)
+
+            QValue = Reward + np.multiply(Reward, PredValues)  # actual + prediction
+
+            feed_dict = {self.State_tensor: OldState, self.Action_tensor: Action,self.Reward_tensor:QValue, self.Dropout: 0.9  }
             _, lossS = self.sess.run([self.TrainCritic_op, self.CriticLossSummary], feed_dict=feed_dict)
             self.i+=1
             self.train_writer.add_summary(lossS, self.i)
