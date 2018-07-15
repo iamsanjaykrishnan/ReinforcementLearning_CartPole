@@ -158,6 +158,7 @@ class NeuralNetwork:
 
         for i in range(iterations):
             dfSample = self.df.sample(25)  # minibatch 25
+
             OldState = dfSample.as_matrix(['Old_State0', 'Old_State1', 'Old_State2', 'Old_State3'])
 
             feed_dict = {self.State_tensor: OldState, self.Dropout: 0.9}
@@ -206,9 +207,9 @@ class NeuralNetwork:
         saver = tf.train.Saver()
         # Save the variables in session  to disk.
         saver.save(self.sess, self.nnDirectory+'\\model\CartpoleNN')
-    def LoadNeuralNetwork(self,Location):
+    def LoadNeuralNetwork(self):
         # load meta graph and restore weights
-        saver = tf.train.import_meta_graph(self.nnDirectory+'\\model\CartpoleNN.meta')
-        saver.restore(self.sess, tf.train.latest_checkpoint(self.nnDirectory+'\\model'))
+        saver = tf.train.Saver()
+        saver.restore(self.sess, tf.train.latest_checkpoint(self.nnDirectory+'\\model\\'))
 
 

@@ -7,7 +7,7 @@ import numpy as np
 env = gym.make('CartPole-v0')
 env.reset()
 # preCollected data
-data = 'E:\ReinforcementLearning_CartPole\\NN_data\\pdFrame.csv'
+data = 'E:\ReinforcementLearning_CartPole\\NN_data\\120Episodes.csv'
 # initialize custom neural network class
 NN = NeuralNetwork()
 # load old data
@@ -16,6 +16,7 @@ NN.load_dataframe(data)
 NN.Critic_init_train(10000)
 NN.Critic_train(1000)
 NN.Actor_train(1000)
+
 
 for E in range(20):
     observation_old = env.reset()
@@ -41,5 +42,5 @@ for E in range(20):
             NN.Actor_train(1000)
             break
 
-NN.save_df(NN.nnDirectory+'\\120Episodes.csv')
-NN.SaveNeuralNetwork()
+#NN.save_df(NN.nnDirectory+'\\120Episodes.csv')
+#NN.SaveNeuralNetwork()
