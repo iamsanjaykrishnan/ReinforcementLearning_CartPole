@@ -7,7 +7,7 @@ Training : <br />
 - Reward function is defined as the number of time steps survived.<br />
 	Q = reward_for_current_step + Max_Qvalue_for_next_step<br /><br />
 - It is trained based on actor critic algorithm. 
--- The critic network models the Q value and the actor network tries to maximize the reward for all possible states that has been explored <br />
+- The critic network models the Q value and the actor network tries to maximize the reward for all possible states that has been explored <br />
 Activation function used : Elu<br />
 Regularization : Droupout<br />
 Optimizer : Adam<br />
