@@ -3,6 +3,7 @@
 ![ReinforcementLearning_Sanjay Krishnan Venugopal](https://github.com/iamsanjaykrishnan/ReinforcementLearning_CartPole/blob/master/SanjayReinforcementLearning.gif)<br />
 Exploration : <br />
 - Based on random action for 100 episodes.<br />
+
 Training : <br />
 - Training is done on explored data.<br />
 - Reward function is defined as the number of time steps survived.<br />
