@@ -2,14 +2,15 @@
 
 ![ReinforcementLearning_Sanjay Krishnan Venugopal](https://github.com/iamsanjaykrishnan/ReinforcementLearning_CartPole/blob/master/SanjayReinforcementLearning.gif)<br />
 Exploration : <br />
--Based on random action for 100 episodes.<br />
+- Based on random action for 100 episodes.<br />
 Training : <br />
 - Training is done on explored data.<br />
 - Reward function is defined as the number of time steps survived.<br />
-	Q = reward_for_current_step + Max_Qvalue_for_next_step<br /><br />
-- It is trained based on actor critic algorithm. 
+- It is trained based on actor critic algorithm. <br />
 - The critic network models the Q value and the actor network tries to maximize the reward for all possible states that has been explored <br />
-Activation function used : Elu<br />
+Qvalue = reward_for_current_step + Max_Qvalue_for_next_step<br /><br />
+Hyper parameters<br />
+Activation function : Elu
 Regularization : Droupout<br />
 Optimizer : Adam<br />
 Network : Actor(State>10>10>2-Action), Critic(State+Action>10>10>1-Qvalue)<br />
