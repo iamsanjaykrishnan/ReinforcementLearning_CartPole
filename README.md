@@ -6,7 +6,7 @@ Exploration : <br />
 Training : <br />
 - Training is done on explored data.<br />
 - Reward function is defined as the number of time steps survived.<br />
-- It is trained based on actor critic algorithm. <br />
+- It is trained based on actor critic algorithm, a GAN based algorithm. <br />
 - The critic network models the Q value and the actor network tries to maximize the reward for all possible states that has been explored <br />
 Qvalue = reward_for_current_step + Max_Qvalue_for_next_step<br /><br />
 Hyper parameters<br />
@@ -38,5 +38,7 @@ Trial 18 : Episode finished after 190 timesteps<br />
 Trial 19 : Episode finished after 191 timesteps<br />
 Trial 20 : Episode finished after 198 timesteps<br />
 
-# ReinforcementLearning_CartPole_Architecture -> Actor Critic or GAN
+The critic network was initallized by trained with explored data. Unexplored points were interpolated based on elu function. The explored data was limited to a max of 40 steps and to improve the critic network, the 20 episodes resulting during training of the network and explored data are used to reinitilize Q value predicted from critic network. This results in better training.
+
+## Architecture -> Actor Critic
 ![ReinforcementLearning_A2C](https://github.com/iamsanjaykrishnan/ReinforcementLearning_CartPole/blob/master/NetworkArchitecture.png)
