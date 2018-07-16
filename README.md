@@ -10,7 +10,7 @@ Training : <br />
 - The critic network models the Q value and the actor network tries to maximize the reward for all possible states that has been explored <br />
 Qvalue = reward_for_current_step + Max_Qvalue_for_next_step<br /><br />
 Hyper parameters<br />
-Activation function : Elu
+Activation function : Elu<br />
 Regularization : Droupout<br />
 Optimizer : Adam<br />
 Network : Actor(State>10>10>2-Action), Critic(State+Action>10>10>1-Qvalue)<br />
