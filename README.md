@@ -37,8 +37,8 @@ Trial 17 : Episode finished after 185 timesteps<br />
 Trial 18 : Episode finished after 190 timesteps<br />
 Trial 19 : Episode finished after 191 timesteps<br />
 Trial 20 : Episode finished after 198 timesteps<br />
-
+<br /><br />
 The critic network was initallized by trained with explored data. Unexplored points were interpolated based on elu function. The explored data was limited to a max of 40 steps and to improve the critic network, the 20 episodes resulting during training of the network and explored data are used to reinitilize Q value predicted from critic network. This results in better training.
-
+<br />
 ## Architecture -> Actor Critic
 ![ReinforcementLearning_A2C](https://github.com/iamsanjaykrishnan/ReinforcementLearning_CartPole/blob/master/NetworkArchitecture.png)
