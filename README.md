@@ -1,7 +1,7 @@
 # CartPole Reinforcement Learning 
 
 ![ReinforcementLearning_Sanjay Krishnan Venugopal](https://github.com/iamsanjaykrishnan/ReinforcementLearning_CartPole/blob/master/SanjayReinforcementLearning.gif)<br />
-Check out CartPole_NN.py to understand the network architecture, learning methods, loss and other functions that enable Reinforcement learning.<br />
+Check out CartPole_NN.py to understand the network architecture, learning methods, loss and other functions that enable Reinforcement learning.<br /> <br /> <br />
 Exploration : <br />
 - Based on random action for 100 episodes.<br />
 
