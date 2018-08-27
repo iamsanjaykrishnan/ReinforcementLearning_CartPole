@@ -16,7 +16,6 @@ class NeuralNetwork:
         self.j =0
 
 
-
     def Actor(self,input_tensor):
         init_vs = tf.initializers.variance_scaling(scale=0.01)
         with tf.variable_scope('Actor')as scope:
@@ -30,6 +29,8 @@ class NeuralNetwork:
             hidden = tf.nn.softmax(hidden)
             output = hidden
         return output
+    
+    
     def Critic(self,input_tensor,reuse=0):
         init_vs = tf.initializers.variance_scaling(scale=0.01)
         with tf.variable_scope('Critic')as scope:
@@ -45,6 +46,7 @@ class NeuralNetwork:
             output = hidden
         return output
 
+    
     def define_neural_network(self):
         # reset the graph
         tf.reset_default_graph()
@@ -87,11 +89,13 @@ class NeuralNetwork:
         self.sess = tf.Session()
         self.sess.run(tf.global_variables_initializer())
 
+        
     def DataFrame_init(self):
         column_names = ['Episode_no','Step_no','Old_State0','Old_State1','Old_State2','Old_State3','New_State0','New_State1','New_State2','New_State3','Action0','Action1','Reward']
         self.df = pd.DataFrame(np.zeros(shape=[1,13],dtype=np.float32),columns=column_names)
         self.logger.info(column_names)
 
+        
     def DataFrame_append(self,Episode_no,Step_no,OldState,NewState,Action,Reward):
         column_names = ['Episode_no', 'Step_no', 'Old_State0', 'Old_State1', 'Old_State2', 'Old_State3', 'New_State0',
                         'New_State1', 'New_State2', 'New_State3', 'Action0', 'Action1', 'Reward']
@@ -109,13 +113,16 @@ class NeuralNetwork:
         appended_values = pd.DataFrame(value, columns=column_names)
         self.df = self.df.append(appended_values,ignore_index=True)
 
+        
     def save_df(self,csv_file):
         #csv_file = self.nnDirectory+'\\pdFrame.csv'
         self.df.to_csv(csv_file)
 
+        
     def load_dataframe(self,file):
         self.df = pd.DataFrame.from_csv(file)
 
+        
     def path_init(self):
         self.cwd = os.getcwd()
         directory = str(self.cwd)+('\\NN_data')
@@ -123,6 +130,7 @@ class NeuralNetwork:
             os.makedirs(directory)
         self.nnDirectory = directory
 
+        
     def init_logger(self):
         # clear old log files
         log_file =self.nnDirectory + '\\CartpoleNN.log'
@@ -139,6 +147,7 @@ class NeuralNetwork:
         logger.setLevel(logging.DEBUG)
         self.logger = logger
 
+        
     def tensorflow_summary_init(self):
         import time as Time
         self.train_writer = tf.summary.FileWriter(self.nnDirectory+ '\\TFsummary\\' + Time.strftime('%H_%M_%S'), self.sess.graph)
@@ -154,8 +163,8 @@ class NeuralNetwork:
             self.i += 1
             self.train_writer.add_summary(lossS, self.i)
 
+            
     def Actor_train(self,iterations):
-
         for i in range(iterations):
             dfSample = self.df.sample(25)  # minibatch 25
 
@@ -166,6 +175,7 @@ class NeuralNetwork:
             self.j+=1
             self.train_writer.add_summary(lossS,self.j )
 
+            
     def Critic_value(self,state,action):
         OldState = state
         Action = action
@@ -173,13 +183,14 @@ class NeuralNetwork:
         Score = self.sess.run([self.CriticScore_event], feed_dict=feed_dict)
         return Score[0]
 
+    
     def Action(self,State):
         feed_dict = {self.State_tensor: State, self.Dropout: 1}
         Action_one_hot_encoded= self.sess.run([self.nnActionTensor], feed_dict=feed_dict)
         return Action_one_hot_encoded[0]
 
+    
     def Critic_train(self,iterations):
-
         for i in range(iterations):
             dfSample = self.df.sample(25) # minibatch 25
             OldState = dfSample.as_matrix(['Old_State0', 'Old_State1', 'Old_State2', 'Old_State3'])
@@ -203,10 +214,13 @@ class NeuralNetwork:
             self.i+=1
             self.train_writer.add_summary(lossS, self.i)
 
+            
     def SaveNeuralNetwork(self):
         saver = tf.train.Saver()
         # Save the variables in session  to disk.
         saver.save(self.sess, self.nnDirectory+'\\model\CartpoleNN')
+        
+        
     def LoadNeuralNetwork(self):
         # load meta graph and restore weights
         saver = tf.train.Saver()
