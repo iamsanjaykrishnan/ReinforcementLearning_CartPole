@@ -1,3 +1,4 @@
+tensrflow model described in CartPole_NN.py
 # CartPole Reinforcement Learning 
 
 ![ReinforcementLearning_Sanjay Krishnan Venugopal](https://github.com/iamsanjaykrishnan/ReinforcementLearning_CartPole/blob/master/SanjayReinforcementLearning.gif)<br />
